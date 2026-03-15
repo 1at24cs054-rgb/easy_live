@@ -1,19 +1,16 @@
-const mysql = require("mysql2");
+const { Pool } = require("pg");
 
-const db = mysql.createConnection({
-    host: process.env.DB_HOST || "localhost",
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "",
-    database: process.env.DB_NAME || "easyliving"
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL || `postgresql://${process.env.DB_USER || 'postgres'}:${process.env.DB_PASSWORD || ''}@${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || 5432}/${process.env.DB_NAME || 'easyliving'}`,
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
 });
 
-db.connect(err => {
-    if (err) {
-        console.warn("⚠️  Database connection failed:", err.message);
-        console.warn("   The app will work with hardcoded property data.");
-    } else {
-        console.log("✅ MySQL Connected");
-    }
+pool.on('error', (err) => {
+    console.warn("⚠️  PostgreSQL connection error:", err.message);
 });
 
-module.exports = db;
+console.log("🐘 PostgreSQL Client Configured");
+
+module.exports = {
+    query: (text, params, callback) => pool.query(text, params, callback)
+};

@@ -11,7 +11,7 @@ function formatProperty(row) {
         location: row.location,
         area: row.area,
         price: Math.round(parseFloat(row.price)),
-        priceType: row.priceType,
+        priceType: row.price_type, // PG uses snake_case usually, or matching col name
         description: row.description,
         beds: row.beds,
         baths: row.baths,
@@ -26,9 +26,10 @@ router.get("/properties", (req, res) => {
     const sql = "SELECT * FROM properties";
     db.query(sql, (err, results) => {
         if (err) {
+            console.error("Query Error:", err);
             res.status(500).json({ error: err.message });
         } else {
-            res.json(results.map(formatProperty));
+            res.json(results.rows.map(formatProperty));
         }
     });
 });
@@ -36,12 +37,13 @@ router.get("/properties", (req, res) => {
 /* GET properties by type */
 router.get("/properties/:type", (req, res) => {
     const type = req.params.type;
-    const sql = "SELECT * FROM properties WHERE type = ?";
+    const sql = "SELECT * FROM properties WHERE type = $1";
     db.query(sql, [type], (err, results) => {
         if (err) {
+            console.error("Query Error:", err);
             res.status(500).json({ error: err.message });
         } else {
-            res.json(results.map(formatProperty));
+            res.json(results.rows.map(formatProperty));
         }
     });
 });

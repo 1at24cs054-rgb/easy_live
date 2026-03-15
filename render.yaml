@@ -10,25 +10,13 @@ services:
         value: 10000
       - key: NODE_ENV
         value: production
-      - key: DB_HOST
+      - key: DATABASE_URL
         fromDatabase:
           name: easy-living-db
-          property: host
-      - key: DB_USER
-        fromDatabase:
-          name: easy-living-db
-          property: user
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: easy-living-db
-          property: password
-      - key: DB_NAME
-        fromDatabase:
-          name: easy-living-db
-          property: database
+          property: connectionString
 
 databases:
   - name: easy-living-db
     databaseName: easyliving
-    user: dbadmin
+    type: postgres
     plan: free
