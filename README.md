@@ -1,9 +1,9 @@
 # 🏠 EasyLiving - Find Your Perfect Space
 
-[![Full Stack](https://img.shields.io/badge/Full%20Stack-Web%20App-blue.svg)](https://github.com/1at24cs054-rgb/easy_live)
+[![Full Stack](https://img.shields.io/badge/Full%20Stack-Web%20App-blue.svg)](https://easy-living-c8mm.onrender.com)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green.svg)](https://nodejs.org/)
-[![MySQL](https://img.shields.io/badge/Database-MySQL-orange.svg)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)](https://www.postgresql.org/)
+[![Deployed on Render](https://img.shields.io/badge/Deployed%20on-Render-00b3b0.svg)](https://render.com)
 
 EasyLiving is a comprehensive real estate and property management platform designed to simplify the process of finding your next home. Whether you're looking for a rental apartment, a PG, a lease property, a co-living space, or a home to buy, EasyLiving brings everything together in one beautiful, intuitive interface.
 
@@ -26,7 +26,7 @@ EasyLiving is a comprehensive real estate and property management platform desig
 | :--- | :--- |
 | **Frontend** | HTML5, CSS3 (Vanilla), Vanilla JavaScript |
 | **Backend** | Node.js, Express.js |
-| **Database** | MySQL (MariaDB) |
+| **Database** | PostgreSQL (on Render) |
 | **Environment** | Dotenv (Configurations) |
 | **Styling** | Custom CSS Variables, Google Fonts (Poppins) |
 
@@ -37,7 +37,7 @@ EasyLiving is a comprehensive real estate and property management platform desig
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) installed
-- [MySQL](https://www.mysql.com/) server (e.g., via XAMPP or standalone)
+- [PostgreSQL](https://www.postgresql.org/) or [MySQL](https://www.mysql.com/) server (Local setup supports both)
 
 ### Installation & Setup
 
@@ -60,9 +60,10 @@ EasyLiving is a comprehensive real estate and property management platform desig
    - Update the `.env` file with your MySQL credentials.
 
 3. **Database Setup**:
-   - Import the provided SQL schema to your MySQL server:
+   - For cloud PostgreSQL: Link your `DATABASE_URL` in the `.env` file.
+   - Import the provided SQL schema to your database:
      ```bash
-     mysql -u your_user -p < backend/setup.sql
+     psql -U your_user -d easyliving < backend/setup.sql
      ```
 
 4. **Start the Application**:
@@ -76,11 +77,8 @@ EasyLiving is a comprehensive real estate and property management platform desig
 
 ## 📸 Screenshots
 
-### Homepage
-*(Add your beautiful homepage screenshot link here)*
-
-### Property Listings
-*(Add your property listing screenshot link here)*
+### Live Demo
+🔗 **[Check out the Live App on Render](https://easy-living-c8mm.onrender.com)**
 
 ---
 
