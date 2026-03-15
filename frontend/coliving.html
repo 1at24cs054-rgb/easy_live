@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-living Spaces - EasyLiving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><h1>EasyLiving</h1></a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rent.html" class="nav-link">Rent</a>
+                <a href="pg.html" class="nav-link">PGs</a>
+                <a href="lease.html" class="nav-link">Lease</a>
+                <a href="coliving.html" class="nav-link active">Co-living</a>
+                <a href="buy.html" class="nav-link">Buy</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hi">HI</button>
+                <button class="lang-btn" data-lang="kn">KN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Hero Section -->
+    <section class="category-hero">
+        <div class="category-hero-container">
+            <div class="category-hero-content">
+                <h1 class="category-hero-title" data-translate="coliving-hero-title">Modern Co-living Spaces</h1>
+                <p class="category-hero-subtitle" data-translate="coliving-hero-subtitle">Experience community living with modern amenities and flexible spaces</p>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="coliving-count">0</span>
+                        <span data-translate="properties-available">Properties Available</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span data-translate="prime-locations">Prime Locations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">₹18K-25K</span>
+                        <span data-translate="price-range">Price Range</span>
+                    </div>
+                </div>
+            </div>
+            <div class="category-hero-image">
+                <div class="category-placeholder">
+                    <div class="category-icon">🛏️</div>
+                    <p>Co-living Spaces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <input type="text" id="search-input" placeholder="Search by area, type, or features..." data-translate-placeholder="search-placeholder">
+            </div>
+            <div class="filter-group">
+                <select id="area-filter">
+                    <option value="all" data-translate="area-all">All Areas</option>
+                    <option value="koramangala">Koramangala</option>
+                    <option value="indiranagar">Indiranagar</option>
+                    <option value="jayanagar">Jayanagar</option>
+                    <option value="whitefield">Whitefield</option>
+                    <option value="marathahalli">Marathahalli</option>
+                </select>
+            </div>
+            <div class="filter-group price-group">
+                <input type="number" id="min-price" placeholder="Min Price" data-translate-placeholder="min-price">
+                <input type="number" id="max-price" placeholder="Max Price" data-translate-placeholder="max-price">
+            </div>
+            <button id="apply-filters" class="filter-btn" data-translate="apply-filters">Apply Filters</button>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-coliving">Co-living Spaces</h2>
+            <div id="properties-grid" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <!-- Trust Elements -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon">✅</div>
+                <span data-translate="verified-listings">Verified Listings</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🔒</div>
+                <span data-translate="secure-payments">Secure Payments (Coming Soon)</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🕒</div>
+                <span data-translate="support">24/7 Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" style="text-decoration: none; color: inherit;"><h3>EasyLiving</h3></a>
+                    <p data-translate="footer-desc">Your trusted partner in finding the perfect living space</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="rent.html">Rent</a>
+                    <a href="pg.html">PGs</a>
+                    <a href="lease.html">Lease</a>
+                    <a href="coliving.html">Co-living</a>
+                    <a href="buy.html">Buy</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <p data-translate="email">📧 contact@easyliving.com</p>
+                    <p data-translate="phone">📞 +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="copyright">© 2026 EasyLiving. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="property-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="modal-placeholder">
+                        <div class="modal-icon"></div>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <div class="modal-badge" id="modal-badge"></div>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-location"></p>
+                    <div class="modal-price" id="modal-price"></div>
+                    <div class="modal-description" id="modal-description"></div>
+                    <div class="modal-highlights" id="modal-highlights"></div>
+                    <button class="modal-cta" data-translate="contact-now">Contact Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the current page type
+        const currentPageType = 'coliving';
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

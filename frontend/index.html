@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyLiving - Find Your Perfect Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>EasyLiving</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active" data-section="home">Home</a>
+                <a href="rent.html" class="nav-link" data-section="rent">Rent</a>
+                <a href="pg.html" class="nav-link" data-section="pg">PGs</a>
+                <a href="lease.html" class="nav-link" data-section="lease">Lease</a>
+                <a href="coliving.html" class="nav-link" data-section="coliving">Co-living</a>
+                <a href="buy.html" class="nav-link" data-section="buy">Buy</a>
+                <a href="index.html#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hi">HI</button>
+                <button class="lang-btn" data-lang="kn">KN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-translate="hero-title">Find your next EasyLiving space</h1>
+                <p class="hero-subtitle" data-translate="hero-subtitle">Rent, PGs, Lease, Co-living, Buy - all in one place</p>
+                <button class="cta-button" data-translate="start-exploring">Start Exploring</button>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">
+                    <div class="hero-icon"></div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Tiles -->
+        <div class="dashboard">
+            <div class="dashboard-container">
+                <div class="dashboard-tile" data-section="rent">
+                    <div class="tile-icon">🏠</div>
+                    <h3 data-translate="tile-rent-title">Rent</h3>
+                    <p data-translate="tile-rent-desc">Find your perfect rental home</p>
+                </div>
+                <div class="dashboard-tile" data-section="pg">
+                    <div class="tile-icon">👨‍🎓</div>
+                    <h3 data-translate="tile-pg-title">PG</h3>
+                    <p data-translate="tile-pg-desc">Affordable PG accommodations</p>
+                </div>
+                <div class="dashboard-tile" data-section="lease">
+                    <div class="tile-icon">📄</div>
+                    <h3 data-translate="tile-lease-title">Lease</h3>
+                    <p data-translate="tile-lease-desc">Flexible lease options</p>
+                </div>
+                <div class="dashboard-tile" data-section="coliving">
+                    <div class="tile-icon">🛌</div>
+                    <h3 data-translate="tile-coliving-title">Co-living</h3>
+                    <p data-translate="tile-coliving-desc">Modern shared living spaces</p>
+                </div>
+                <div class="dashboard-tile" data-section="buy">
+                    <div class="tile-icon">💰</div>
+                    <h3 data-translate="tile-buy-title">Buy</h3>
+                    <p data-translate="tile-buy-desc">Invest in your dream property</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <input type="text" id="search-input" placeholder="Search by area, type, or features..." data-translate-placeholder="search-placeholder">
+            </div>
+            <div class="filter-group">
+                <select id="area-filter">
+                    <option value="all" data-translate="area-all">All Areas</option>
+                    <option value="koramangala">Koramangala</option>
+                    <option value="indiranagar">Indiranagar</option>
+                    <option value="jayanagar">Jayanagar</option>
+                    <option value="whitefield">Whitefield</option>
+                    <option value="marathahalli">Marathahalli</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="type-filter">
+                    <option value="all" data-translate="type-all">All Types</option>
+                    <option value="rent" data-translate="type-rent">Rent</option>
+                    <option value="pg" data-translate="type-pg">PGs</option>
+                    <option value="lease" data-translate="type-lease">Lease</option>
+                    <option value="coliving" data-translate="type-coliving">Co-living</option>
+                    <option value="buy" data-translate="type-buy">Buy</option>
+                </select>
+            </div>
+            <div class="filter-group price-group">
+                <input type="number" id="min-price" placeholder="Min Price" data-translate-placeholder="min-price">
+                <input type="number" id="max-price" placeholder="Max Price" data-translate-placeholder="max-price">
+            </div>
+            <button id="apply-filters" class="filter-btn" data-translate="apply-filters">Apply Filters</button>
+        </div>
+    </section>
+
+    <!-- Property Sections -->
+    <section id="section-rent" class="property-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-rent">Rental Properties</h2>
+            <div id="rent-properties" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <section id="section-pg" class="property-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-pg">PG Accommodations</h2>
+            <div id="pg-properties" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <section id="section-lease" class="property-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-lease">Lease Properties</h2>
+            <div id="lease-properties" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <section id="section-coliving" class="property-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-coliving">Co-living Spaces</h2>
+            <div id="coliving-properties" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <section id="section-buy" class="property-section">
+        <div class="section-container">
+            <h2 class="section-title" data-translate="section-buy">Properties for Sale</h2>
+            <div id="buy-properties" class="properties-grid"></div>
+        </div>
+    </section>
+
+    <!-- Trust Elements -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon">✅</div>
+                <span data-translate="verified-listings">Verified Listings</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🔒</div>
+                <span data-translate="secure-payments">Secure Payments (Coming Soon)</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🕒</div>
+                <span data-translate="support">24/7 Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EasyLiving</h3>
+                    <p data-translate="footer-desc">Your trusted partner in finding the perfect living space</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-translate="privacy-policy">Privacy Policy</a>
+                    <a href="#" data-translate="terms">Terms of Service</a>
+                    <a href="#" data-translate="contact-us">Contact Us</a>
+                </div>
+                <div class="footer-contact">
+                    <p data-translate="email">📧 contact@easyliving.com</p>
+                    <p data-translate="phone">📞 +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="copyright">© 2026 EasyLiving. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="property-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="modal-placeholder">
+                        <div class="modal-icon">🏠</div>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <div class="modal-badge" id="modal-badge"></div>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-location"></p>
+                    <div class="modal-price" id="modal-price"></div>
+                    <div class="modal-description" id="modal-description"></div>
+                    <div class="modal-highlights" id="modal-highlights"></div>
+                    <button class="modal-cta" data-translate="contact-now">Contact Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
