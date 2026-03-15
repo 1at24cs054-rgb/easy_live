@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: easy-living
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        fromDatabase:
+          name: easy-living-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: easy-living-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: easy-living-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: easy-living-db
+          property: database
+
+databases:
+  - name: easy-living-db
+    databaseName: easyliving
+    user: dbadmin
+    plan: free
